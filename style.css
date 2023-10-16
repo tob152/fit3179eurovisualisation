@@ -1,0 +1,78 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.neonText {
+color: #fff;
+text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #01045a,
+    0 0 82px #01045a,
+    0 0 92px #01045a,
+    0 0 102px #01045a,
+    0 0 151px #01045a;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:aliceblue;
+
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-left:30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        margin-left:30%;
+        margin-right: 30%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-left:30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+body {
+    background-color:white;
+    vertical-align: middle;
+}
+
+html {
+    color: #01045a;
+    text-align: center;
+
+}
+
+.bg
+{
+  width: 90%;
+  z-index: 0;
+  margin-top: 5%;
+}
+
+.sm
+{
+  width: 40%;
+  z-index: 0;
+}

@@ -1,0 +1,56 @@
+{
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": 700,
+        "height": 450,
+            "title": {
+                "text": "FIGURE 1. PARTICIPATING COUNTRIES IN FINAL",
+                "fontSize": 20
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/Cian2001/irs_datasets/main/world_map.json",
+                "format": {"property": "features"}
+            },
+            "projection": {
+                "type": "mercator",
+                "scale":380,
+                "rotate":[-10,0,0],
+                "center":[10,57]
+            },
+            "transform": [
+                {
+                "lookup": "properties.name",
+                "from": {
+                    "key": "Contestant",
+                    "fields": ["Total score","Jury score","Televoting score"],
+                    "data": {
+                    "url" : "https://raw.githubusercontent.com/tob152/euroviz1/main/2022convertcsv.json"
+            
+                    } 
+                }
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                
+                "stroke": "floralwhite",
+                "strokeWidth": 0.5
+            },
+            "encoding": {
+                "color": {
+                "field": "Total score",
+                "type": "quantitative",
+                "scale": {"scheme": "plasma"}
+                },
+                "tooltip": [
+                    {"field": "properties.name", "title": "Country"},
+                    {"field": "Total score", "type": "quantitative", "title": "Total score"},
+                    {"field": "properties.name", "title": "Country"},
+                    {"field": "Jury score", "type": "quantitative", "title": "Jury score"},
+                    {"field": "properties.name", "title": "Country"},
+                    {"field": "Televoting score", "type": "quantitative", "title": "Televote score"}
+                  ]            
+                
+            },
+            "config": {"mark": {"invalid": null}}
+            }
+        
