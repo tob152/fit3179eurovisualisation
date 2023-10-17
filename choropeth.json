@@ -23,7 +23,7 @@
                     "key": "Contestant",
                     "fields": ["Total score","Jury score","Televoting score"],
                     "data": {
-                    "url" : "https://raw.githubusercontent.com/tob152/euroviz1/main/2022convertcsv.json"
+                    "url" : "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"
             
                     } 
                 }
@@ -38,6 +38,7 @@
             "encoding": {
                 "color": {
                 "field": "Total score",
+                "title": "TOTAL SCORE",
                 "type": "quantitative",
                 "scale": {"scheme": "plasma"}
                 },
