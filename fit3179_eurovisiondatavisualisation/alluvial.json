@@ -1,0 +1,24 @@
+{
+    "title": {
+      "text": "World Cup 2018: Group F Rankings",
+      "frame": "bounds"
+    },
+    "width": 700,
+    "height": 450,
+    "data": {"url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"},
+    "transform": [{
+      "fold": ["Televoting score", "Jury score"],
+      "sort": [{"field": "value", "order": "descending"}],
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "groupby": ["key"]
+    }],
+    "mark": {"type": "line", "orient": "vertical"},
+    "encoding": {
+      "x": {"field": "key", "type": "ordinal"},
+      "y": {"field": "rank", "type": "ordinal"},
+      "color": {"field": "Contestant", "type": "nominal"}
+    }
+  }
