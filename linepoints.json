@@ -14,7 +14,7 @@
         {"field": "properties.name", "title": "Country"},
         {"field": "Jury score", "type": "quantitative", "title": "Jury score"},
         {"field": "properties.name", "title": "Country"}]     
-        
+
     }
     }
   

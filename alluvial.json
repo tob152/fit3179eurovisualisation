@@ -1,24 +1,48 @@
 {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text": "World Cup 2018: Group F Rankings",
-      "frame": "bounds"
+      "text": "Figure 2. Ranking of Countries"
+      
     },
     "width": 700,
     "height": 450,
-    "data": {"url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"},
+    "data": {
+      "values": [
+        {"team": "France", "Score Type": "Televoting", "point": 0, "diff": -1},
+        {"team": "Ukraine", "Score Type": "Televoting", "point": 3, "diff": 1},
+        {"team": "Australia", "Score Type": "Televoting", "point": 0, "diff": -1},
+        {"team": "Sweden", "Score Type": "Televoting", "point": 3, "diff": 1},
+        {"team": "France", "Score Type": "Jury", "point": 3, "diff": 0},
+        {"team": "Ukraine", "Score Type": "Jury", "point": 6, "diff": 2},
+        {"team": "Australia", "Score Type": "Jury", "point": 0, "diff": -2},
+        {"team": "Sweden", "Score Type": "Jury", "point": 3, "diff": 0},
+        {"team": "France", "Score Type": "Final", "point": 3, "diff": -2},
+        {"team": "Ukraine", "Score Type": "Final", "point": 6, "diff": -1},
+        {"team": "Australia", "Score Type": "Final", "point": 3, "diff": 0},
+        {"team": "Sweden", "Score Type": "Final", "point": 6, "diff": 3}
+      ]
+    },
     "transform": [{
-      "fold": ["Televoting score", "Jury score"],
-      "sort": [{"field": "value", "order": "descending"}],
+      "sort": [
+        {"field": "point", "order": "descending"},
+        {"field": "diff", "order": "descending"}
+      ],
       "window": [{
         "op": "rank",
         "as": "rank"
       }],
-      "groupby": ["key"]
+      "groupby": ["Score Type"]
     }],
     "mark": {"type": "line", "orient": "vertical"},
     "encoding": {
-      "x": {"field": "key", "type": "ordinal"},
+      "x": {"field": "Score Type", "type": "ordinal"},
       "y": {"field": "rank", "type": "ordinal"},
-      "color": {"field": "Contestant", "type": "nominal"}
+      "color": {
+        "field": "team", "type": "nominal",
+        "scale": {
+          "domain": ["France", "Ukraine", "Australia", "Sweden"],
+          "range": ["black", "#127153", "#C91A3C", "#0C71AB"]
+        }
+      }
     }
   }

@@ -223,3 +223,32 @@
           "field": "Contestant", "type": "nominal"
         }
       }}
+
+
+      //next one
+
+      {
+        "title": {
+          "text": "Figure 2. Ranking of Countries After Each Vote",
+          "frame": "bounds"
+        },
+        "width": 700,
+        "height": 450,
+        "data": {"url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"},
+        "transform": [{
+          "fold": ["Televoting score", "Jury score"],
+          "sort": [{"field": "Televoting score", "order": "descending"}],
+          "window": [{
+            "op": "rank",
+            "as": "rank",
+            "groupby": ["key"]
+          }]
+          
+        }],
+        "mark": {"type": "line", "orient": "vertical"},
+        "encoding": {
+          "x": {"field": "key", "type": "ordinal"},
+          "y": {"field": "rank", "type": "ordinal"},
+          "color": {"field": "Contestant", "type": "nominal"}
+        }
+      }
