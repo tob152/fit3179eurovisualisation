@@ -1,58 +1,54 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Figure 4. Australia's Jury Votes"
-    },
-    "width": 700,
-    "height": 700,
-    "data": {
-        "url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"
-      },
-    "encoding": {
-        "x": {
-          "field": "Contestant",
-          "type": "ordinal"
+    "width": 450,
+    "height": 450,
+        "title": {
+            "text": "FIGURE 4. AUSTRALIA'S JURY VOTES* ",
+            "fontSize": 20
         },
-        "y": {
-          "field": "columns",
-          "type": "ordinal",
-          "scale": {
-            "reverse": true,
-            "domain": [0.5, 5.5]
-          }
+        "data": {
+            "url": "https://raw.githubusercontent.com/Cian2001/irs_datasets/main/world_map.json",
+            "format": {"property": "features"}
         },
-        "text": {
-          "field": "Contestant",
-          "type": "nominal"
+        "projection": {
+            "type": "mercator",
+            "scale":380,
+            "rotate":[-10,0,0],
+            "center":[10,57]
+        },
+        "transform": [
+            {
+            "lookup": "properties.name",
+            "from": {
+                "key": "Contestant",
+                "fields": ["Australia","Total score"],
+                "data": {
+                "url" : "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"
+        
+                } 
+            }
+            }
+        ],
+        "mark": {
+            "type": "geoshape",
+            
+            "stroke": "black",
+            "strokeWidth": 0.5
+        },
+        "encoding": {
+            "color": {
+            "field": "Australia",
+            "title": "Australia's Votes",
+            "type": "quantitative",
+            "scale": {"scheme": "plasma"}
+            },
+            "tooltip": [
+                {"field": "properties.name", "title": "Country"},
+                {"field": "Total score", "type": "quantitative", "title": "Total score"},
+                {"field": "properties.name", "title": "Country"},
+                {"field": "Australia", "type": "quantitative", "title": "Jury score"}
+              ]            
+            
+        },
+        "config": {"mark": {"invalid": null}}
         }
-      },
-      "layer": [
-        {
-          "mark": {
-            "type": "square",
-            "color": "#494F59",
-            "size": 9000
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "color": "white",
-            "size": 12.5
-          }
-        }
-      ],
-      "config": {
-        "font": "Ubuntu Condensed",
-        "view": {
-          "stroke": null
-        },
-        "axis": {
-          "grid": false,
-          "domain": false,
-          "labels": false,
-          "ticks": false,
-          "title": "false"
-        }
-      }
-    }

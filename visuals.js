@@ -18,6 +18,10 @@ var vg_5 = "australiavotedjury.json";
 vegaEmbed("#australiavotedjury", vg_5).then(function(result) {
 }).catch(console.error);
 
+var vg_6 = "australiavotedtelevote.json";
+vegaEmbed("#australiavotedtelevote", vg_6).then(function(result) {
+}).catch(console.error);
+
 var firstname = document.getElementById("firstname")
 var lastname = document.getElementById("lastname")
 var jsonBtn = document.getElementById("jsonbtn")
@@ -34,7 +38,7 @@ var config = {
     duration: 0,
     key: function (d) { return d.properties.ISO_A3; },
     grid: {
-        ALB: { x: 5, y: 8 },
+            ALB: { x: 5, y: 8 },
         ARM: { x: 9, y: 6 },
         AUS: { x: 9, y: 9 },
         AUT: { x: 4, y: 5 },

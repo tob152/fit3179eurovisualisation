@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 450,
+    "height": 450,
+    "title": {
+      "text": "FIGURE 5. AUSTRALIA'S TELEVOTES*",
+      "fontSize": 20
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/Cian2001/irs_datasets/main/world_map.json",
+      "format": {"property": "features"}
+    },
+    "projection": {
+      "type": "mercator",
+      "scale": 380,
+      "rotate": [-10, 0, 0],
+      "center": [10, 57]
+    },
+    "transform": [
+      {
+        "lookup": "properties.name",
+        "from": {
+          "key": "Contestant",
+          "fields": ["Australia", "Total score"],
+          "data": {
+            "url" : "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_televote_results.csv"
+          } 
+        }
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "stroke": "black",
+          "strokeWidth": 0.5
+        }
+      }
+    ],
+    "encoding": {
+      "color": {
+        "field": "Australia",
+        "title": "Australia's Televote Votes",
+        "type": "quantitative",
+        "scale": {"scheme": "plasma"},
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "properties.name", "title": "Country"},
+        {"field": "Total score", "type": "quantitative", "title": "Total score"},
+        {"field": "properties.name", "title": "Country"},
+        {"field": "Australia", "type": "quantitative", "title": "Televote score"}
+      ]            
+    },
+    "config": {"mark": {"invalid": null}}
+  }
+  

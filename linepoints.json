@@ -1,10 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
+    "title":"FIGURE 3. JURY VOTES VS TELEVOTES",
+    "width": 1100,
     "height": 450,
     "data": {"url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"},
     "mark":"circle",
     "transform": [
+        {"calculate": "datum['Televoting score'] + datum['Jury score']", "as": "TotalScore"},
+        {"calculate": "max(datum.TotalScore)", "as": "MaxTotalScore"}
     ],
     "encoding": {
       "x": {"field": "Televoting score", "type": "quantitative","axis": {"domain": false, "grid": false, "ticks": false}},

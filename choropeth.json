@@ -3,8 +3,7 @@
         "width": 700,
         "height": 450,
             "title": {
-                "text": "FIGURE 1. PARTICIPATING COUNTRIES IN FINAL",
-                "fontSize": 20
+                "text": "FIGURE 1. PARTICIPATING COUNTRIES IN FINAL*"
             },
             "data": {
                 "url": "https://raw.githubusercontent.com/Cian2001/irs_datasets/main/world_map.json",

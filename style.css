@@ -17,14 +17,14 @@ text-shadow:
     0 0 151px #01045a;
 }
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arimo', sans-serif;
     font-weight: 900;
 
 
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arimo', sans-serif;
     font-weight: 400;
     margin-left:30%;
     margin-right: 30%;
@@ -33,7 +33,7 @@ h2 {
     font-size: 1.3em;
 }
 h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Arimo', sans-serif;
         font-weight: 900;
         margin-left:30%;
         margin-right: 30%;
@@ -42,7 +42,7 @@ h3 {
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arimo', sans-serif;
     font-weight: 400;
     margin-left:30%;
     margin-right: 30%;
