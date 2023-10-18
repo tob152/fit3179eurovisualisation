@@ -4,6 +4,8 @@
     "height": 450,
     "data": {"url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"},
     "mark":"circle",
+    "transform": [
+    ],
     "encoding": {
       "x": {"field": "Televoting score", "type": "quantitative","axis": {"domain": false, "grid": false, "ticks": false}},
       "y": {"field": "Jury score", "type": "quantitative","axis": {"domain": false, "grid": false, "ticks": false}},

@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Figure 4. Australia's Jury Votes"
+    },
+    "width": 700,
+    "height": 700,
+    "data": {
+        "url": "https://raw.githubusercontent.com/tob152/fit3179eurovisualisation/main/data/2022_jury_results.csv"
+      },
+    "encoding": {
+        "x": {
+          "field": "Contestant",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "columns",
+          "type": "ordinal",
+          "scale": {
+            "reverse": true,
+            "domain": [0.5, 5.5]
+          }
+        },
+        "text": {
+          "field": "Contestant",
+          "type": "nominal"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "square",
+            "color": "#494F59",
+            "size": 9000
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "color": "white",
+            "size": 12.5
+          }
+        }
+      ],
+      "config": {
+        "font": "Ubuntu Condensed",
+        "view": {
+          "stroke": null
+        },
+        "axis": {
+          "grid": false,
+          "domain": false,
+          "labels": false,
+          "ticks": false,
+          "title": "false"
+        }
+      }
+    }
